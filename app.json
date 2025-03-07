@@ -2,6 +2,14 @@
   "expo": {
     "name": "teste",
     "slug": "teste",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "plugins": [
+      "react-native-ble-plx"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "d0bb6230-9a0d-4d13-a444-1f60ce7589e2"
+      }
+    }
   }
 }
