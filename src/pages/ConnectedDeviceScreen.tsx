@@ -2,14 +2,10 @@ import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View, Image } from "react-native";
 import Success from "../../assets/Success.png";
 import { COLORS } from "../Constants";
-import { useNavigation } from "@react-navigation/native";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { RootStackParamList } from "../routes/Routes";
-
-type IConnectedDeviceNavigationProps = StackNavigationProp<RootStackParamList>;
+import { useAppNavigation } from "../utils/useAppNavigation";
 
 const ConnectedDeviceScreen: React.FC = () => {
-  const navigation = useNavigation<IConnectedDeviceNavigationProps>();
+  const navigation = useAppNavigation();
 
   const handleViewChocolate = () => {
     navigation.replace("ChocolateMonitoring");

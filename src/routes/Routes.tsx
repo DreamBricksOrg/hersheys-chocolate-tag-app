@@ -7,6 +7,7 @@ import ConnectionErrorScreen from "../pages/ConnectionErrorScreen";
 import ConnectedDeviceScreen from "../pages/ConnectedDeviceScreen";
 import ChocolateMonitoring from "../pages/ChocolateMonitoring";
 import PairingScreen from "../pages/PairingScreen";
+import { NativeStackNavigationProp } from "react-native-screens/lib/typescript/native-stack/types";
 
 export type RootStackParamList = {
   Onboarding: undefined;
@@ -42,5 +43,8 @@ const Routes: React.FC = () => {
     </NavigationContainer>
   );
 };
+
+export type RootStackNavigationProp<T extends keyof RootStackParamList> =
+  NativeStackNavigationProp<RootStackParamList, T>;
 
 export default Routes;

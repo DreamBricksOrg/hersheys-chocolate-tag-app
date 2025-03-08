@@ -7,7 +7,6 @@ export async function registerForPushNotificationsAsync() {
       name: "default",
       importance: Notifications.AndroidImportance.MAX,
       vibrationPattern: [0, 250, 250, 250],
-      lightColor: "#FF231F7C",
     });
   }
 
@@ -21,9 +20,10 @@ export async function registerForPushNotificationsAsync() {
   }
 
   if (finalStatus !== "granted") {
-    alert("Failed to get push token for push notification!");
+    alert("Acesse as configurações e forneça permissão para notificações!");
     return;
   }
+
   // Learn more about projectId:
   // https://docs.expo.dev/push-notifications/push-notifications-setup/#configure-projectid
 }

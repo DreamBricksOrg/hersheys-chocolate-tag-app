@@ -2,18 +2,14 @@ import React, { useEffect } from "react";
 import { StyleSheet, useAnimatedValue, Animated } from "react-native";
 import Shields from "../../assets/Shields.png";
 import Logo from "../../assets/Logo.png";
-import { useNavigation } from "@react-navigation/native";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { RootStackParamList } from "../routes/Routes";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS } from "../Constants";
+import { useAppNavigation } from "../utils/useAppNavigation";
 
-type IOnboardingNavigationProps = StackNavigationProp<RootStackParamList>;
-
-const duration = 500;
+const DURATION = 500;
 
 const Onboarding: React.FC = () => {
-  const navigation = useNavigation<IOnboardingNavigationProps>();
+  const navigation = useAppNavigation();
 
   const shieldFadeAnim = useAnimatedValue(0);
   const logoFadeAnim = useAnimatedValue(0);
@@ -22,8 +18,8 @@ const Onboarding: React.FC = () => {
   const shieldFadeIn = () => {
     Animated.timing(shieldFadeAnim, {
       toValue: 1,
-      duration: duration,
-      delay: duration,
+      duration: DURATION,
+      delay: DURATION,
       useNativeDriver: true,
     }).start();
   };
@@ -31,8 +27,8 @@ const Onboarding: React.FC = () => {
   const logoFadeIn = () => {
     Animated.timing(logoFadeAnim, {
       toValue: 1,
-      duration: duration,
-      delay: duration * 2,
+      duration: DURATION,
+      delay: DURATION * 2,
       useNativeDriver: true,
     }).start();
   };
@@ -40,13 +36,13 @@ const Onboarding: React.FC = () => {
   const textFadeIn = () => {
     Animated.timing(textFadeAnim, {
       toValue: 1,
-      duration: duration,
-      delay: duration * 3,
+      duration: DURATION,
+      delay: DURATION * 3,
       useNativeDriver: true,
     }).start(() => {
       setTimeout(() => {
         navigation.replace("ChocolateMonitoring");
-      }, duration * 2);
+      }, DURATION * 2);
     });
   };
 

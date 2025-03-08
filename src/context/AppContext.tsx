@@ -49,7 +49,11 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
   const updateTag = (newTag: Device | null) => {
     if (!newTag && tag) {
       disconnectSubscription.current?.remove();
-      BLEService.disconnectDeviceById(tag.id);
+      try {
+        BLEService.disconnectDeviceById(tag.id);
+      } catch (error) {
+        console.log("Falha ao desconectar dispositivo:", error);
+      }
     }
 
     setTag(newTag);
@@ -76,12 +80,14 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
     console.log("disableAutoConnect status:", disableAutoConnect.current);
 
     if (disableAutoConnect.current) {
-      console.log(`Reconexão desativada.`);
+      console.log(
+        `Reconexão automática desativada, tentativa de reconexão encerrada.`
+      );
       return;
     }
 
     if (reconnectAttempts.current >= maxAttempts) {
-      console.warn(
+      console.log(
         `Reconexão interrompida após ${reconnectAttempts} tentativas.`
       );
 
@@ -95,13 +101,14 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
           reconnectAttempts.current + 1
         }`
       );
+
       const device = await BLEService.connectToDevice(deviceId);
       console.log("Reconectado com sucesso:", device.id);
 
       setTag(device);
       reconnectAttempts.current = 0;
     } catch (error) {
-      console.error("Erro ao tentar reconectar:", error);
+      console.log("Erro ao tentar reconectar:", error);
 
       if (reconnectAttempts.current + 1 < maxAttempts) {
         console.log(`Agendando nova tentativa em ${RECONNECT_DELAY_MS}ms...`);
@@ -112,7 +119,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
         );
       } else {
         reconnectAttempts.current = 0;
-        console.warn("Número máximo de tentativas de reconexão atingido.");
+        console.log("Número máximo de tentativas de reconexão atingido.");
       }
     }
   };
@@ -133,7 +140,6 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
   useEffect(() => {
     if (!knowTagId) {
       disableAutoConnect.current = true;
-      console.log("AutoConnect desligado:"), disableAutoConnect.current;
     }
   }, [knowTagId]);
 

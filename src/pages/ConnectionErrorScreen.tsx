@@ -2,15 +2,10 @@ import React from "react";
 import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
 import ErrorImg from "../../assets/Error.png";
 import { COLORS } from "../Constants";
-import { useNavigation } from "@react-navigation/native";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { RootStackParamList } from "../routes/Routes";
-
-type IConnectionErrorScreenNavigationProps =
-  StackNavigationProp<RootStackParamList>;
+import { useAppNavigation } from "../utils/useAppNavigation";
 
 const ConnectionErrorScreen: React.FC = () => {
-  const navigation = useNavigation<IConnectionErrorScreenNavigationProps>();
+  const navigation = useAppNavigation();
 
   const handleTryAgain = () => {
     navigation.replace("Pairing");

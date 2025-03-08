@@ -6,25 +6,56 @@ import PrimaryButton from "../components/PrimaryButton";
 import StepIndicator from "../components/StepIndicator";
 import StepInstructions from "../components/StepInstructions";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { useNavigation } from "@react-navigation/native";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { RootStackParamList } from "../routes/Routes";
 import { COLORS } from "../Constants";
 import { BLEService } from "../services/BLEService";
+import { State } from "react-native-ble-plx";
+import { useAppNavigation } from "../utils/useAppNavigation";
 
-type IInstructionsScreenNavigationProps =
-  StackNavigationProp<RootStackParamList>;
+const showErrorToast = (text: string) => {
+  Toast.show({
+    type: "error",
+    text1: text,
+    position: "bottom",
+  });
+};
 
 const InstructionsScreen: React.FC = () => {
-  const navigation = useNavigation<IInstructionsScreenNavigationProps>();
+  const navigation = useAppNavigation();
   const insets = useSafeAreaInsets();
 
-  const handleContinuePress = async () => {
+  const checkBluetoothStatus = async (): Promise<boolean> => {
     const hasPermission = await BLEService.requestBluetoothPermission();
 
-    if (hasPermission) {
-      navigation.navigate("Pairing");
+    if (!hasPermission) {
+      showErrorToast("Forneça permissão para utilizar bluetooth");
+      return false;
     }
+
+    let isActive = false;
+
+    try {
+      const status = await BLEService.getState();
+
+      isActive = status === State.PoweredOn;
+
+      if (!isActive) {
+        showErrorToast("Por favor, ative o bluetooth antes de continuar");
+        return false;
+      }
+    } catch (error) {
+      showErrorToast("Verifique se o bluetooth está ativo");
+      return false;
+    }
+
+    return isActive && hasPermission;
+  };
+
+  const handleContinuePress = async () => {
+    const isBluetoothReady = await checkBluetoothStatus();
+
+    if (!isBluetoothReady) return;
+
+    navigation.navigate("Pairing");
   };
 
   const handleGoBack = () => {
