@@ -1,7 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Text, ViewStyle } from "react-native";
 import { COLORS } from "../Constants";
-import { useBle } from "../../useBle";
 import { useApp } from "../context/AppContext";
 
 type Props = {

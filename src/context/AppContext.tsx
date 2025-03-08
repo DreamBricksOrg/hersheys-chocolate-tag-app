@@ -16,6 +16,10 @@ interface IAppContext {
   tag: Device | null;
   isTagKnown: boolean;
   updateTag: (tag: Device | null) => void;
+  attemptReconnection: (
+    deviceId: string,
+    maxAttempts?: number
+  ) => Promise<void>;
 }
 
 const RECONNECT_DELAY_MS = 2000;
@@ -40,11 +44,12 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
   const [knowTagId] = useMMKVString(STORAGE.tagId);
   const reconnectAttempts = useRef(0);
   const disconnectSubscription = useRef<Subscription | null>(null);
+  const disableAutoConnect = useRef(false);
 
   const updateTag = (newTag: Device | null) => {
     if (!newTag && tag) {
-      BLEService.disconnectDeviceById(tag.id);
       disconnectSubscription.current?.remove();
+      BLEService.disconnectDeviceById(tag.id);
     }
 
     setTag(newTag);
@@ -60,16 +65,27 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
     disconnectSubscription.current = device.onDisconnected(() => {
       showDisconnectedNotification();
       disconnectSubscription.current?.remove();
-      attemptReconnection(device.id);
       setTag(null);
     });
   };
 
-  const attemptReconnection = async (deviceId: string) => {
-    if (reconnectAttempts.current >= MAX_RECONNECT_ATTEMPTS) {
+  const attemptReconnection = async (
+    deviceId: string,
+    maxAttempts = MAX_RECONNECT_ATTEMPTS
+  ) => {
+    console.log("disableAutoConnect status:", disableAutoConnect.current);
+
+    if (disableAutoConnect.current) {
+      console.log(`Reconexão desativada.`);
+      return;
+    }
+
+    if (reconnectAttempts.current >= maxAttempts) {
       console.warn(
         `Reconexão interrompida após ${reconnectAttempts} tentativas.`
       );
+
+      reconnectAttempts.current = 0;
       return;
     }
 
@@ -84,16 +100,18 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
 
       setTag(device);
       reconnectAttempts.current = 0;
-      //   startMonitoringDisconnection(device);
     } catch (error) {
       console.error("Erro ao tentar reconectar:", error);
 
-      // Verifica o número de tentativas atualizado antes de reconectar
-      if (reconnectAttempts.current + 1 < MAX_RECONNECT_ATTEMPTS) {
+      if (reconnectAttempts.current + 1 < maxAttempts) {
         console.log(`Agendando nova tentativa em ${RECONNECT_DELAY_MS}ms...`);
         reconnectAttempts.current += 1;
-        setTimeout(() => attemptReconnection(deviceId), RECONNECT_DELAY_MS);
+        setTimeout(
+          () => attemptReconnection(deviceId, maxAttempts),
+          RECONNECT_DELAY_MS
+        );
       } else {
+        reconnectAttempts.current = 0;
         console.warn("Número máximo de tentativas de reconexão atingido.");
       }
     }
@@ -101,6 +119,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
 
   useEffect(() => {
     if (tag) {
+      disableAutoConnect.current = false;
       startMonitoringDisconnection(tag);
     }
 
@@ -111,12 +130,20 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
     };
   }, [tag]);
 
+  useEffect(() => {
+    if (!knowTagId) {
+      disableAutoConnect.current = true;
+      console.log("AutoConnect desligado:"), disableAutoConnect.current;
+    }
+  }, [knowTagId]);
+
   return (
     <AppContext.Provider
       value={{
         tag,
         isTagKnown: !!knowTagId,
         updateTag,
+        attemptReconnection,
       }}
     >
       {children}
