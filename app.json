@@ -4,13 +4,11 @@
     "slug": "teste",
     "version": "1.0.0",
     "plugins": ["react-native-ble-plx"],
+    "icon": "./assets/Icon.png",
     "extra": {
       "eas": {
         "projectId": "d0bb6230-9a0d-4d13-a444-1f60ce7589e2"
       }
-    },
-    "ios": {
-      "icon": "./assets/Icon.png"
     }
   }
 }
