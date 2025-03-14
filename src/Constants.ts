@@ -1,3 +1,5 @@
+import { Platform } from "react-native";
+
 export const COLORS = {
   brown: "#452F2A",
   lightYellow: "#F6E2AB",
@@ -8,4 +10,9 @@ export const COLORS = {
 
 export const STORAGE = {
   tagId: "@teste:tagId",
+};
+
+export const FONTS = {
+  sharpGrotesk:
+    Platform.OS === "android" ? "SharpGrotesk" : "SharpGroteskTRIALLight-25",
 };

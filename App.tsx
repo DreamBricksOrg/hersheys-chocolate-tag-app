@@ -4,6 +4,7 @@ import * as Notifications from "expo-notifications";
 import Routes from "./src/routes/Routes";
 import { registerForPushNotificationsAsync } from "./src/services/notificationHelper";
 import { AppProvider } from "./src/context/AppContext";
+import Onboarding from "./src/pages/Onboarding";
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({

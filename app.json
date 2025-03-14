@@ -1,9 +1,17 @@
 {
   "expo": {
-    "name": "teste",
-    "slug": "teste",
+    "name": "Barra AntiFurto",
+    "slug": "Barra AntiFurto",
     "version": "1.0.0",
-    "plugins": ["react-native-ble-plx"],
+    "plugins": [
+      "react-native-ble-plx",
+      [
+        "expo-font",
+        {
+          "fonts": ["./assets/fonts/SharkGrotesk.otf"]
+        }
+      ]
+    ],
     "icon": "./assets/Icon.png",
     "extra": {
       "eas": {
