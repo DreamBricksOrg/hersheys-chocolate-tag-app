@@ -1,4 +1,4 @@
-package com.teste
+package com.gustavotc.barraantifurto
 
 import android.os.Build
 import android.os.Bundle
