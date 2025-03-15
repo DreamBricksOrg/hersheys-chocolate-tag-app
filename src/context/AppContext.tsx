@@ -11,6 +11,7 @@ import { STORAGE } from "../Constants";
 import { Device, Subscription } from "react-native-ble-plx";
 import { BLEService } from "../services/BLEService";
 import * as Notifications from "expo-notifications";
+import { showDisconnectNotification } from "../services/notificationHelper";
 
 interface IAppContext {
   tag: Device | null;
@@ -26,16 +27,6 @@ const RECONNECT_DELAY_MS = 2000;
 const MAX_RECONNECT_ATTEMPTS = 5;
 
 const AppContext = createContext<IAppContext | undefined>(undefined);
-
-const showDisconnectedNotification = () => {
-  Notifications.scheduleNotificationAsync({
-    content: {
-      title: "Tag desconectada",
-      body: "A tag foi desconectada do dispositivo!",
-    },
-    trigger: null,
-  });
-};
 
 export const AppProvider: React.FC<{ children: ReactNode }> = ({
   children,
@@ -67,7 +58,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
     }
 
     disconnectSubscription.current = device.onDisconnected(() => {
-      showDisconnectedNotification();
+      showDisconnectNotification();
       disconnectSubscription.current?.remove();
       setTag(null);
     });

@@ -1,5 +1,11 @@
 import { Platform } from "react-native";
 import * as Notifications from "expo-notifications";
+import { NOTIFICATION_MESSAGES } from "../Constants";
+
+const getRandomNotificationData = () => {
+  const index = Math.floor(Math.random() * NOTIFICATION_MESSAGES.length);
+  return NOTIFICATION_MESSAGES[index];
+};
 
 export async function registerForPushNotificationsAsync() {
   if (Platform.OS === "android") {
@@ -26,4 +32,16 @@ export async function registerForPushNotificationsAsync() {
 
   // Learn more about projectId:
   // https://docs.expo.dev/push-notifications/push-notifications-setup/#configure-projectid
+}
+
+export async function showDisconnectNotification() {
+  const data = getRandomNotificationData();
+
+  Notifications.scheduleNotificationAsync({
+    content: {
+      title: data.title,
+      body: data.message,
+    },
+    trigger: null,
+  });
 }
