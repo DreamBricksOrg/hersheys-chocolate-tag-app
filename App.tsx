@@ -4,6 +4,7 @@ import * as Notifications from "expo-notifications";
 import Routes from "./src/routes/Routes";
 import { registerForPushNotificationsAsync } from "./src/services/notificationHelper";
 import { AppProvider } from "./src/context/AppContext";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -20,11 +21,11 @@ export default function App() {
   }, []);
 
   return (
-    <>
+    <SafeAreaProvider>
       <StatusBar style="auto" translucent />
       <AppProvider>
         <Routes />
       </AppProvider>
-    </>
+    </SafeAreaProvider>
   );
 }
