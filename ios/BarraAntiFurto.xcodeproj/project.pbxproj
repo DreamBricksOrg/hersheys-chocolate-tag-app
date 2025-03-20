@@ -11,14 +11,13 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
-		811B136DBC5E3466C69F5F25 /* libPods-BarraAntiFurto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E37C14D0F047A0D5D11D931 /* libPods-BarraAntiFurto.a */; };
 		B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
 		C81F42A4EB560EA6F4D4F923 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 4DC464BDB08E465A3433DAAC /* PrivacyInfo.xcprivacy */; };
+		F243462A391E06E59BE0AD3C /* libPods-BarraAntiFurto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD97A92D42213C57AF20B1AA /* libPods-BarraAntiFurto.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0E37C14D0F047A0D5D11D931 /* libPods-BarraAntiFurto.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BarraAntiFurto.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* Barra AntiFurto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Barra AntiFurto.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = BarraAntiFurto/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = BarraAntiFurto/AppDelegate.mm; sourceTree = "<group>"; };
@@ -26,10 +25,11 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = BarraAntiFurto/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = BarraAntiFurto/main.m; sourceTree = "<group>"; };
 		4DC464BDB08E465A3433DAAC /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = BarraAntiFurto/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		6C216D24E418C41C4462A255 /* Pods-BarraAntiFurto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarraAntiFurto.debug.xcconfig"; path = "Target Support Files/Pods-BarraAntiFurto/Pods-BarraAntiFurto.debug.xcconfig"; sourceTree = "<group>"; };
-		8176434DFEBC167D77E2D923 /* Pods-BarraAntiFurto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarraAntiFurto.release.xcconfig"; path = "Target Support Files/Pods-BarraAntiFurto/Pods-BarraAntiFurto.release.xcconfig"; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = BarraAntiFurto/SplashScreen.storyboard; sourceTree = "<group>"; };
+		AA4E1D5024C5132129FA349E /* Pods-BarraAntiFurto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarraAntiFurto.release.xcconfig"; path = "Target Support Files/Pods-BarraAntiFurto/Pods-BarraAntiFurto.release.xcconfig"; sourceTree = "<group>"; };
+		B1FFEB8D1BB7DC7B4997BC46 /* Pods-BarraAntiFurto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarraAntiFurto.debug.xcconfig"; path = "Target Support Files/Pods-BarraAntiFurto/Pods-BarraAntiFurto.debug.xcconfig"; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
+		CD97A92D42213C57AF20B1AA /* libPods-BarraAntiFurto.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BarraAntiFurto.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB83AB62D6D4A9800ABA3B3 /* BarraAntiFurto.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = BarraAntiFurto.entitlements; path = BarraAntiFurto/BarraAntiFurto.entitlements; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-BarraAntiFurto/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				811B136DBC5E3466C69F5F25 /* libPods-BarraAntiFurto.a in Frameworks */,
+				F243462A391E06E59BE0AD3C /* libPods-BarraAntiFurto.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				0E37C14D0F047A0D5D11D931 /* libPods-BarraAntiFurto.a */,
+				CD97A92D42213C57AF20B1AA /* libPods-BarraAntiFurto.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -133,8 +133,8 @@
 		D65327D7A22EEC0BE12398D9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6C216D24E418C41C4462A255 /* Pods-BarraAntiFurto.debug.xcconfig */,
-				8176434DFEBC167D77E2D923 /* Pods-BarraAntiFurto.release.xcconfig */,
+				B1FFEB8D1BB7DC7B4997BC46 /* Pods-BarraAntiFurto.debug.xcconfig */,
+				AA4E1D5024C5132129FA349E /* Pods-BarraAntiFurto.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -154,14 +154,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "BarraAntiFurto" */;
 			buildPhases = (
-				8ACB9AE1D26A5FC059D18716 /* [CP] Check Pods Manifest.lock */,
+				75BDC4B9D0CD87D56B939CC8 /* [CP] Check Pods Manifest.lock */,
 				D9BB463613DF548A84CBF273 /* [Expo] Configure project */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				238A62A3ADF189FCAD346F90 /* [CP] Embed Pods Frameworks */,
-				8E6327BB39F7D86F06C6F073 /* [CP] Copy Pods Resources */,
+				9C5FFAF9905801E7747F4B2D /* [CP] Embed Pods Frameworks */,
+				DFFC3AD6A2F283DABBC283B5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -236,24 +236,7 @@
 			shellPath = /bin/sh;
 			shellScript = "if [[ -f \"$PODS_ROOT/../.xcode.env\" ]]; then\n  source \"$PODS_ROOT/../.xcode.env\"\nfi\nif [[ -f \"$PODS_ROOT/../.xcode.env.local\" ]]; then\n  source \"$PODS_ROOT/../.xcode.env.local\"\nfi\n\n# The project root by default is one level up from the ios directory\nexport PROJECT_ROOT=\"$PROJECT_DIR\"/..\n\nif [[ \"$CONFIGURATION\" = *Debug* ]]; then\n  export SKIP_BUNDLING=1\nfi\nif [[ -z \"$ENTRY_FILE\" ]]; then\n  # Set the entry JS file using the bundler's entry resolution.\n  export ENTRY_FILE=\"$(\"$NODE_BINARY\" -e \"require('expo/scripts/resolveAppEntry')\" \"$PROJECT_ROOT\" ios absolute | tail -n 1)\"\nfi\n\nif [[ -z \"$CLI_PATH\" ]]; then\n  # Use Expo CLI\n  export CLI_PATH=\"$(\"$NODE_BINARY\" --print \"require.resolve('@expo/cli', { paths: [require.resolve('expo/package.json')] })\")\"\nfi\nif [[ -z \"$BUNDLE_COMMAND\" ]]; then\n  # Default Expo CLI command for bundling\n  export BUNDLE_COMMAND=\"export:embed\"\nfi\n\n# Source .xcode.env.updates if it exists to allow\n# SKIP_BUNDLING to be unset if needed\nif [[ -f \"$PODS_ROOT/../.xcode.env.updates\" ]]; then\n  source \"$PODS_ROOT/../.xcode.env.updates\"\nfi\n# Source local changes to allow overrides\n# if needed\nif [[ -f \"$PODS_ROOT/../.xcode.env.local\" ]]; then\n  source \"$PODS_ROOT/../.xcode.env.local\"\nfi\n\n`\"$NODE_BINARY\" --print \"require('path').dirname(require.resolve('react-native/package.json')) + '/scripts/react-native-xcode.sh'\"`\n\n";
 		};
-		238A62A3ADF189FCAD346F90 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BarraAntiFurto/Pods-BarraAntiFurto-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BarraAntiFurto/Pods-BarraAntiFurto-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BarraAntiFurto/Pods-BarraAntiFurto-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8ACB9AE1D26A5FC059D18716 /* [CP] Check Pods Manifest.lock */ = {
+		75BDC4B9D0CD87D56B939CC8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -275,21 +258,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8E6327BB39F7D86F06C6F073 /* [CP] Copy Pods Resources */ = {
+		9C5FFAF9905801E7747F4B2D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BarraAntiFurto/Pods-BarraAntiFurto-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-BarraAntiFurto/Pods-BarraAntiFurto-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BarraAntiFurto/Pods-BarraAntiFurto-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-BarraAntiFurto/Pods-BarraAntiFurto-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BarraAntiFurto/Pods-BarraAntiFurto-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BarraAntiFurto/Pods-BarraAntiFurto-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D9BB463613DF548A84CBF273 /* [Expo] Configure project */ = {
@@ -311,6 +294,23 @@
 			shellPath = /bin/sh;
 			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-BarraAntiFurto/expo-configure-project.sh\"\n";
 		};
+		DFFC3AD6A2F283DABBC283B5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BarraAntiFurto/Pods-BarraAntiFurto-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BarraAntiFurto/Pods-BarraAntiFurto-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BarraAntiFurto/Pods-BarraAntiFurto-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -329,7 +329,7 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C216D24E418C41C4462A255 /* Pods-BarraAntiFurto.debug.xcconfig */;
+			baseConfigurationReference = B1FFEB8D1BB7DC7B4997BC46 /* Pods-BarraAntiFurto.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -337,7 +337,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XGQ2BSYR97;
+				DEVELOPMENT_TEAM = X8GY7M3F3S;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -357,7 +357,7 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gustavotc.barraantifurto;
+				PRODUCT_BUNDLE_IDENTIFIER = org.orangebox.hershey;
 				PRODUCT_NAME = "Barra AntiFurto";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -368,13 +368,15 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8176434DFEBC167D77E2D923 /* Pods-BarraAntiFurto.release.xcconfig */;
+			baseConfigurationReference = AA4E1D5024C5132129FA349E /* Pods-BarraAntiFurto.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = BarraAntiFurto/BarraAntiFurto.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XGQ2BSYR97;
+				DEVELOPMENT_TEAM = X8GY7M3F3S;
 				INFOPLIST_FILE = BarraAntiFurto/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Barra AntiFurto";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
@@ -389,8 +391,9 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gustavotc.barraantifurto;
+				PRODUCT_BUNDLE_IDENTIFIER = org.orangebox.hershey;
 				PRODUCT_NAME = "Barra AntiFurto";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

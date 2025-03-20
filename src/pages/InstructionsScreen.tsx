@@ -85,13 +85,6 @@ const InstructionsScreen: React.FC = () => {
         <StepIndicator step={2} />
 
         <StepInstructions
-          title="Identifique a tag de sua barra"
-          description='É esse aparelho "HERSHIELD” mesmo, viu?'
-        />
-
-        <StepIndicator step={3} />
-
-        <StepInstructions
           title="Faça o pareamento"
           description="Não esqueça que é a sua amada barra que está em jogo!"
         />
@@ -124,7 +117,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: COLORS.brown,
     alignItems: "center",
-    gap: 16,
+    gap: 24,
     padding: 16,
   },
   title: {
@@ -132,6 +125,6 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     fontSize: 28,
     textAlign: "center",
-    marginTop: 74,
+    marginTop: 54,
   },
 });

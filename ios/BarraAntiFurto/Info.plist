@@ -39,6 +39,10 @@
 	<array>
 		<string>SharpGrotesk.otf</string>
 	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>bluetooth-central</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>SplashScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -47,11 +51,6 @@
 	</array>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleDefault</string>
-	<key>UIBackgroundModes</key>
-	<array>
-    	<string>bluetooth-central</string>
-    	<string>Permita que o bluetooth funcione em background para monitorar a tag</string>
-	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

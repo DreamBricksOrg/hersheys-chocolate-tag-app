@@ -31,5 +31,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     textAlign: "center",
     width: 232,
+    marginTop: 4,
   },
 });
